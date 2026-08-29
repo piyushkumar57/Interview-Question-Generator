@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Interview Question Generator</title>
+
+  <link rel="stylesheet" href="appr.css">
+</head>
+
+<body>
+
+  <div class="wrap">
+
+    <!-- HEADER -->
+    <header>
+      <div>
+        <div class="brand">Dossier // 01</div>
+        <h1>Interview Question Generator</h1>
+      </div>
+
+      <div class="tagline">
+        Paste a job description.<br>
+        Get a categorized interview kit.
+      </div>
+    </header>
+
+
+    <!-- MAIN GRID -->
+
+    <div class="grid">
+
+      <!-- INPUT PANEL -->
+
+      <div class="panel">
+
+        <div class="panel-head">
+          01 — Job Description
+        </div>
+
+        <div class="panel-body">
+
+          <textarea
+            id="jdInput"
+            placeholder="Paste the full job description here..."
+          >We're looking for a Senior Backend Engineer with 5+ years of experience to join our platform team. You'll design and build scalable APIs using Python and Django, work with PostgreSQL and Redis, and deploy services on AWS using Docker and Kubernetes. Experience with microservices architecture, CI/CD pipelines, and REST API design is required. You should be comfortable mentoring junior engineers and collaborating closely with product managers. Strong communication skills and the ability to work independently in a fast-paced startup environment are essential.</textarea>
+
+
+          <!-- CONTROLS -->
+
+          <div class="row">
+            <select id="seniorityOverride">
+                <option value="auto">
+                Seniority: Auto-detect
+                </option>
+                <option value="junior">
+                Seniority: Junior
+                </option>
+                <option value="mid">
+                Seniority: Mid-level
+                </option>
+                <option value="senior">
+                Seniority: Senior
+                </option>
+            </select>
+
+            <button
+              class="primary"
+              id="generateBtn">Generate Questions
+            </button>
+             </div>
+          <!-- DETECTED INFORMATION -->
+          <div
+            class="meta"
+            id="detectedMeta"
+          ></div>
+
+        </div>
+      </div>
+
+
+      <!-- OUTPUT PANEL -->
+
+      <div class="panel">
+
+        <div class="panel-head">
+          02 — Interview Kit
+        </div>
+
+
+        <!-- TABS -->
+
+        <div
+          class="tabs"
+          id="tabs"
+          style="display:none;">
+          <button
+            class="tab"
+            data-cat="technical"
+            data-active="true">Technical
+          </button>
+
+          <button
+            class="tab"
+            data-cat="behavioral"
+          >
+            Behavioral
+          </button>
+
+          <button
+            class="tab"
+            data-cat="situational"
+          >
+            Situational
+          </button>
+
+        </div>
+
+
+        <!-- OUTPUT -->
+
+        <div id="output">
+          <div class="empty-state">
+            — no questions generated yet —<br>
+            paste a job description and click
+            "Generate Questions"
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer class="note">
+      Runs entirely in your browser — no data leaves this page. Thik thak coding Sikh liya hu lgta hai 
+    </footer>
+
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="hack.js"></script>
+
+</body>
+</html>
